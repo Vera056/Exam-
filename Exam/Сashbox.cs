@@ -15,6 +15,7 @@ namespace Exam
     public partial class Сashbox
     {
         public int IdСashbox { get; set; }
+        public string Number { get; set; }
         public int IdView { get; set; }
         public decimal Money { get; set; }
     

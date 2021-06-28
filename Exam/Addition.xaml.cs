@@ -10,27 +10,18 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace Exam
 {
     /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
+    /// Логика взаимодействия для Addition.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class Addition : Window
     {
-        public MainWindow()
+        public Addition()
         {
             InitializeComponent();
-            Database1Entities db = new Database1Entities();
-            cashbox.ItemsSource = db.Сashbox.ToList();
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            Addition addition = new Addition();
-            addition.Show();
         }
     }
 }

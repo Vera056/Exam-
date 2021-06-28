@@ -17,10 +17,11 @@
             <PropertyRef Name="IdСashbox" />
           </Key>
           <Property Name="IdСashbox" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Number" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="IdView" Type="int" Nullable="false" />
           <Property Name="Money" Type="money" Nullable="false" />
         </EntityType>
-        <Association Name="FK__Сashbox__IdView__38996AB5">
+        <Association Name="FK__Сashbox__IdView__49C3F6B7">
           <End Role="View" Type="Self.View" Multiplicity="1" />
           <End Role="Сashbox" Type="Self.Сashbox" Multiplicity="*" />
           <ReferentialConstraint>
@@ -35,7 +36,7 @@
         <EntityContainer Name="Хранилище Database1ModelContainer">
           <EntitySet Name="View" EntityType="Self.View" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Сashbox" EntityType="Self.Сashbox" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK__Сashbox__IdView__38996AB5" Association="Self.FK__Сashbox__IdView__38996AB5">
+          <AssociationSet Name="FK__Сashbox__IdView__49C3F6B7" Association="Self.FK__Сashbox__IdView__49C3F6B7">
             <End Role="View" EntitySet="View" />
             <End Role="Сashbox" EntitySet="Сashbox" />
           </AssociationSet>
@@ -51,18 +52,19 @@
           </Key>
           <Property Name="IdView" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="NameView" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="Сashbox" Relationship="Self.FK__Сashbox__IdView__38996AB5" FromRole="View" ToRole="Сashbox" />
+          <NavigationProperty Name="Сashbox" Relationship="Self.FK__Сashbox__IdView__49C3F6B7" FromRole="View" ToRole="Сashbox" />
         </EntityType>
         <EntityType Name="Сashbox">
           <Key>
             <PropertyRef Name="IdСashbox" />
           </Key>
           <Property Name="IdСashbox" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Number" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="IdView" Type="Int32" Nullable="false" />
           <Property Name="Money" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
-          <NavigationProperty Name="View" Relationship="Self.FK__Сashbox__IdView__38996AB5" FromRole="Сashbox" ToRole="View" />
+          <NavigationProperty Name="View" Relationship="Self.FK__Сashbox__IdView__49C3F6B7" FromRole="Сashbox" ToRole="View" />
         </EntityType>
-        <Association Name="FK__Сashbox__IdView__38996AB5">
+        <Association Name="FK__Сashbox__IdView__49C3F6B7">
           <End Role="View" Type="Self.View" Multiplicity="1" />
           <End Role="Сashbox" Type="Self.Сashbox" Multiplicity="*" />
           <ReferentialConstraint>
@@ -77,7 +79,7 @@
         <EntityContainer Name="Database1Entities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Views" EntityType="Self.View" />
           <EntitySet Name="Сashbox" EntityType="Self.Сashbox" />
-          <AssociationSet Name="FK__Сashbox__IdView__38996AB5" Association="Self.FK__Сashbox__IdView__38996AB5">
+          <AssociationSet Name="FK__Сashbox__IdView__49C3F6B7" Association="Self.FK__Сashbox__IdView__49C3F6B7">
             <End Role="View" EntitySet="Views" />
             <End Role="Сashbox" EntitySet="Сashbox" />
           </AssociationSet>
@@ -100,6 +102,7 @@
             <EntityTypeMapping TypeName="Database1Model.Сashbox">
               <MappingFragment StoreEntitySet="Сashbox">
                 <ScalarProperty Name="IdСashbox" ColumnName="IdСashbox" />
+                <ScalarProperty Name="Number" ColumnName="Number" />
                 <ScalarProperty Name="IdView" ColumnName="IdView" />
                 <ScalarProperty Name="Money" ColumnName="Money" />
               </MappingFragment>
