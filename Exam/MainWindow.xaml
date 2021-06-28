@@ -6,8 +6,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Exam"
         mc:Ignorable="d"
-        Title="Касса" Height="450" Width="800">
+        Title="Касса" Height="450" Width="800" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
     <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="Resources\d3a1aeac2317bde3c12eda1f8ce4f805.jpg"/>
+        </Grid.Background>
         <DataGrid x:Name="cashbox" HorizontalAlignment="Left" AutoGenerateColumns="False" Height="268" VerticalAlignment="Top" Width="547" Canvas.Left="31" Canvas.Top="67" Margin="40,68,0,0" OpacityMask="Black">
             <DataGrid.Columns>
                 <DataGridTextColumn Binding="{Binding Number}" Header="Номер" Width="*"/>
