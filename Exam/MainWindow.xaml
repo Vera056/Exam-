@@ -1,12 +1,21 @@
 ﻿<Window x:Class="Exam.MainWindow"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Exam"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Касса" Height="450" Width="800">
     <Grid>
-        
+        <DataGrid x:Name="cashbox" HorizontalAlignment="Left" AutoGenerateColumns="False" Height="268" VerticalAlignment="Top" Width="547" Canvas.Left="31" Canvas.Top="67" Margin="40,68,0,0" OpacityMask="Black">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Number}" Header="Номер" Width="*"/>
+                <DataGridTextColumn Binding="{Binding View.NameView}" Header="Вид" Width="3*"/>
+                <DataGridTextColumn Binding="{Binding Money}" Header="Сумма" Width="2*"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button Content="Добавить" HorizontalAlignment="Left" Margin="640,85,0,0" VerticalAlignment="Top" Width="122"/>
+
     </Grid>
 </Window>
