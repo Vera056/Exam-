@@ -12,7 +12,7 @@ namespace Exam
     using System;
     using System.Collections.Generic;
     
-    public partial class Сashbox
+    public partial class CashBox
     {
         public int IdСashbox { get; set; }
         public string Number { get; set; }

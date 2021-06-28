@@ -22,14 +22,16 @@ namespace Exam
         public Addition()
         {
             InitializeComponent();
-            Database1Entities db = new Database1Entities();
-            vid.ItemsSource = db.Views.ToList();
+            ExamIsrpoEntities db = new ExamIsrpoEntities();
+            vid.ItemsSource = db.View.ToList();
         }
 
         private void AddRecords(object sender, RoutedEventArgs e)
         {
+            int comb = (vid.SelectedItem as View).IdView;
             Insert insert = new Insert();
-            insert.Add();
+            insert.Add(numb.Text,comb,sum.Text);
         }
+        
     }
 }

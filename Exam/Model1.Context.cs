@@ -13,10 +13,10 @@ namespace Exam
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class Database1Entities : DbContext
+    public partial class ExamIsrpoEntities : DbContext
     {
-        public Database1Entities()
-            : base("name=Database1Entities")
+        public ExamIsrpoEntities()
+            : base("name=ExamIsrpoEntities")
         {
         }
     
@@ -25,7 +25,7 @@ namespace Exam
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<View> Views { get; set; }
-        public virtual DbSet<Сashbox> Сashbox { get; set; }
+        public virtual DbSet<CashBox> CashBox { get; set; }
+        public virtual DbSet<View> View { get; set; }
     }
 }

@@ -4,15 +4,8 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="Хранилище Database1Model" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-        <EntityType Name="View">
-          <Key>
-            <PropertyRef Name="IdView" />
-          </Key>
-          <Property Name="IdView" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="NameView" Type="nvarchar(max)" />
-        </EntityType>
-        <EntityType Name="Сashbox">
+      <Schema Namespace="Хранилище ExamIsrpoModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="CashBox">
           <Key>
             <PropertyRef Name="IdСashbox" />
           </Key>
@@ -21,40 +14,39 @@
           <Property Name="IdView" Type="int" Nullable="false" />
           <Property Name="Money" Type="money" Nullable="false" />
         </EntityType>
-        <Association Name="FK__Сashbox__IdView__49C3F6B7">
+        <EntityType Name="View">
+          <Key>
+            <PropertyRef Name="IdView" />
+          </Key>
+          <Property Name="IdView" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NameView" Type="nvarchar(max)" />
+        </EntityType>
+        <Association Name="FK__CashBox__IdView__25869641">
           <End Role="View" Type="Self.View" Multiplicity="1" />
-          <End Role="Сashbox" Type="Self.Сashbox" Multiplicity="*" />
+          <End Role="CashBox" Type="Self.CashBox" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="View">
               <PropertyRef Name="IdView" />
             </Principal>
-            <Dependent Role="Сashbox">
+            <Dependent Role="CashBox">
               <PropertyRef Name="IdView" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="Хранилище Database1ModelContainer">
+        <EntityContainer Name="Хранилище ExamIsrpoModelContainer">
+          <EntitySet Name="CashBox" EntityType="Self.CashBox" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="View" EntityType="Self.View" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Сashbox" EntityType="Self.Сashbox" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK__Сashbox__IdView__49C3F6B7" Association="Self.FK__Сashbox__IdView__49C3F6B7">
+          <AssociationSet Name="FK__CashBox__IdView__25869641" Association="Self.FK__CashBox__IdView__25869641">
             <End Role="View" EntitySet="View" />
-            <End Role="Сashbox" EntitySet="Сashbox" />
+            <End Role="CashBox" EntitySet="CashBox" />
           </AssociationSet>
         </EntityContainer>
       </Schema>
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="Database1Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityType Name="View">
-          <Key>
-            <PropertyRef Name="IdView" />
-          </Key>
-          <Property Name="IdView" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="NameView" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="Сashbox" Relationship="Self.FK__Сashbox__IdView__49C3F6B7" FromRole="View" ToRole="Сashbox" />
-        </EntityType>
-        <EntityType Name="Сashbox">
+      <Schema Namespace="ExamIsrpoModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="CashBox">
           <Key>
             <PropertyRef Name="IdСashbox" />
           </Key>
@@ -62,26 +54,34 @@
           <Property Name="Number" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="IdView" Type="Int32" Nullable="false" />
           <Property Name="Money" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
-          <NavigationProperty Name="View" Relationship="Self.FK__Сashbox__IdView__49C3F6B7" FromRole="Сashbox" ToRole="View" />
+          <NavigationProperty Name="View" Relationship="Self.FK__CashBox__IdView__25869641" FromRole="CashBox" ToRole="View" />
         </EntityType>
-        <Association Name="FK__Сashbox__IdView__49C3F6B7">
+        <EntityType Name="View">
+          <Key>
+            <PropertyRef Name="IdView" />
+          </Key>
+          <Property Name="IdView" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NameView" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="CashBox" Relationship="Self.FK__CashBox__IdView__25869641" FromRole="View" ToRole="CashBox" />
+        </EntityType>
+        <Association Name="FK__CashBox__IdView__25869641">
           <End Role="View" Type="Self.View" Multiplicity="1" />
-          <End Role="Сashbox" Type="Self.Сashbox" Multiplicity="*" />
+          <End Role="CashBox" Type="Self.CashBox" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="View">
               <PropertyRef Name="IdView" />
             </Principal>
-            <Dependent Role="Сashbox">
+            <Dependent Role="CashBox">
               <PropertyRef Name="IdView" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="Database1Entities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="Views" EntityType="Self.View" />
-          <EntitySet Name="Сashbox" EntityType="Self.Сashbox" />
-          <AssociationSet Name="FK__Сashbox__IdView__49C3F6B7" Association="Self.FK__Сashbox__IdView__49C3F6B7">
-            <End Role="View" EntitySet="Views" />
-            <End Role="Сashbox" EntitySet="Сashbox" />
+        <EntityContainer Name="ExamIsrpoEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="CashBox" EntityType="Self.CashBox" />
+          <EntitySet Name="View" EntityType="Self.View" />
+          <AssociationSet Name="FK__CashBox__IdView__25869641" Association="Self.FK__CashBox__IdView__25869641">
+            <End Role="View" EntitySet="View" />
+            <End Role="CashBox" EntitySet="CashBox" />
           </AssociationSet>
         </EntityContainer>
       </Schema>
@@ -89,22 +89,22 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="Хранилище Database1ModelContainer" CdmEntityContainer="Database1Entities">
-          <EntitySetMapping Name="Views">
-            <EntityTypeMapping TypeName="Database1Model.View">
-              <MappingFragment StoreEntitySet="View">
-                <ScalarProperty Name="IdView" ColumnName="IdView" />
-                <ScalarProperty Name="NameView" ColumnName="NameView" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Сashbox">
-            <EntityTypeMapping TypeName="Database1Model.Сashbox">
-              <MappingFragment StoreEntitySet="Сashbox">
+        <EntityContainerMapping StorageEntityContainer="Хранилище ExamIsrpoModelContainer" CdmEntityContainer="ExamIsrpoEntities">
+          <EntitySetMapping Name="CashBox">
+            <EntityTypeMapping TypeName="ExamIsrpoModel.CashBox">
+              <MappingFragment StoreEntitySet="CashBox">
                 <ScalarProperty Name="IdСashbox" ColumnName="IdСashbox" />
                 <ScalarProperty Name="Number" ColumnName="Number" />
                 <ScalarProperty Name="IdView" ColumnName="IdView" />
                 <ScalarProperty Name="Money" ColumnName="Money" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="View">
+            <EntityTypeMapping TypeName="ExamIsrpoModel.View">
+              <MappingFragment StoreEntitySet="View">
+                <ScalarProperty Name="IdView" ColumnName="IdView" />
+                <ScalarProperty Name="NameView" ColumnName="NameView" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -122,7 +122,7 @@
     <Options>
       <DesignerInfoPropertySet>
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
-        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
         <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
         <DesignerProperty Name="UseLegacyProvider" Value="false" />
         <DesignerProperty Name="CodeGenerationStrategy" Value="Нет" />

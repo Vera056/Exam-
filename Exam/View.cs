@@ -17,13 +17,13 @@ namespace Exam
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public View()
         {
-            this.Сashbox = new HashSet<Сashbox>();
+            this.CashBox = new HashSet<CashBox>();
         }
     
         public int IdView { get; set; }
         public string NameView { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Сashbox> Сashbox { get; set; }
+        public virtual ICollection<CashBox> CashBox { get; set; }
     }
 }

@@ -23,8 +23,8 @@ namespace Exam
         public MainWindow()
         {
             InitializeComponent();
-            Database1Entities db = new Database1Entities();
-            cashbox.ItemsSource = db.Сashbox.ToList();
+            ExamIsrpoEntities db = new ExamIsrpoEntities();
+            cashbox.ItemsSource = db.CashBox.ToList();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
