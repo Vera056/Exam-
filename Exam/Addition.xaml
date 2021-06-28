@@ -6,15 +6,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Exam"
         mc:Ignorable="d"
-        Title="Добавление средств" Height="450" Width="400">
+        Title="Добавление средств" Height="450" Width="400" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
     <Window.Background>
         <ImageBrush ImageSource="Resources/d3a1aeac2317bde3c12eda1f8ce4f805.jpg"/>
     </Window.Background>
     <Grid>
-        <TextBox FontSize="20" HorizontalAlignment="Left" Height="35" Margin="55,79,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="282" materialDesign:HintAssist.Hint="Номер поступления" Foreground="White" BorderBrush="#892B0FE7" Background="#00000000" FontWeight="Bold"/>
-        <TextBox FontSize="20" HorizontalAlignment="Left" Height="35" Margin="55,230,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="282" materialDesign:HintAssist.Hint="Сумма поступления" Foreground="White" BorderBrush="#892B0FE7" Background="#00000000" FontWeight="Bold"/>
-        <ComboBox FontSize="20" HorizontalAlignment="Left" Margin="55,149,0,0" VerticalAlignment="Top" Width="282" Height="44" materialDesign:HintAssist.Hint="Вид поступления" Foreground="White" BorderBrush="#892B0FE7" Background="#00000000" FontWeight="Bold"/>
-        <Button FontSize="15" Content="Записать" HorizontalAlignment="Left" Margin="113,334,0,0" VerticalAlignment="Top" Width="156"/>
+        <TextBox x:Name="numb" FontSize="20" HorizontalAlignment="Left" Height="35" Margin="55,79,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="282" materialDesign:HintAssist.Hint="Номер поступления" Foreground="#FF0B0B0B" BorderBrush="#892B0FE7" Background="#00000000" FontWeight="Bold"/>
+        <TextBox x:Name="sum" FontSize="20" HorizontalAlignment="Left" Height="35" Margin="55,230,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="282" materialDesign:HintAssist.Hint="Сумма поступления" Foreground="#FF0B0B0B" BorderBrush="#892B0FE7" Background="#00000000" FontWeight="Bold"/>
+        <ComboBox x:Name="vid" DisplayMemberPath="NameView" FontSize="20" HorizontalAlignment="Left" Margin="55,149,0,0" VerticalAlignment="Top" Width="282" Height="44" materialDesign:HintAssist.Hint="Вид поступления" Foreground="#FF0B0B0B" BorderBrush="#892B0FE7" Background="#00000000" FontWeight="Bold" />
+        <Button FontSize="15" Content="Записать" HorizontalAlignment="Left" Margin="113,334,0,0" VerticalAlignment="Top" Width="156" Click="AddRecords"/>
 
     </Grid>
 </Window>

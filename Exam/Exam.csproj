@@ -91,6 +91,7 @@
     <Compile Include="Addition.xaml.cs">
       <DependentUpon>Addition.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Insert.cs" />
     <Compile Include="Model1.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

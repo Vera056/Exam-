@@ -22,6 +22,14 @@ namespace Exam
         public Addition()
         {
             InitializeComponent();
+            Database1Entities db = new Database1Entities();
+            vid.ItemsSource = db.Views.ToList();
+        }
+
+        private void AddRecords(object sender, RoutedEventArgs e)
+        {
+            Insert insert = new Insert();
+            insert.Add();
         }
     }
 }
